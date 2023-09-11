@@ -40,7 +40,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: generate with Maven
-      run: mvn -B install --file pom.xml
+      run: mvn -B package --file pom.xml
+    - name: install 3rd Party Jars
+      run: mvn install:install-file -Dfile=/home/runner/work/elements-wellpass-registration/elements-wellpass-registration/target/ -DpomFile=pom.xml
     - name: run main from jar
       run: java -cp /home/runner/work/elements-wellpass-registration/elements-wellpass-registration/target/elements-wellpass-registration-1.0.jar ElementsAutomation
      
