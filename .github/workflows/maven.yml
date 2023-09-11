@@ -40,6 +40,6 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: generate with Maven
-      run: mvn -B build --file pom.xml
+      run: mvn -B package --file pom.xml
      
   
