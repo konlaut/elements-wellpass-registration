@@ -10,7 +10,7 @@ name: Java CI with Maven
 
 on:
   schedule:
-    - cron:  '31 15 * * *'
+    - cron:  '32 16 * * *'
     # This runs at 10:00 AM UTC each day.
     # * is a special character in YAML so you have to quote this string
   workflow_dispatch:
