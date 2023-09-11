@@ -42,5 +42,5 @@ jobs:
     - name: generate with Maven
       run: mvn -B compile --file pom.xml
     - name: run main
-      run: java -cp ElementsAutomation.class
+      run: java -cp ./ElementsAutomation.class
   
