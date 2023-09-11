@@ -30,7 +30,7 @@ jobs:
     env:
         ELEMENTS_EMAIL: ${{ secrets.ELEMENTS_EMAIL }}
         ELEMENTS_PASSWORD: ${{ secrets.ELEMENTS_PASSWORD }}
-        ELEMENTS_STUDIO_ID: ${{ secrets.ELEMENTS_STUDIOS }}
+        ELEMENTS_STUDIOS: ${{ secrets.ELEMENTS_STUDIOS }}
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
