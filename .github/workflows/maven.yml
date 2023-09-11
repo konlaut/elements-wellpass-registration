@@ -10,7 +10,7 @@ name: Java CI with Maven
 
 on:
   schedule:
-    - cron:  '32 16 * * *'
+    - cron:  '38 16 * * *'
     # This runs at 10:00 AM UTC each day.
     # * is a special character in YAML so you have to quote this string
   workflow_dispatch:
@@ -41,6 +41,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: run main
+      run: java ElementsAutomation.java
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
