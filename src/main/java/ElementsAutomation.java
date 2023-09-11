@@ -2,11 +2,9 @@ import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.helper.HttpConnection;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -27,7 +25,7 @@ public class ElementsAutomation {
 
         Connection session;
         session = Jsoup.newSession().userAgent(HttpConnection.DEFAULT_UA);
-        Document login_page = getLogin(session);
+        getLogin(session);
 
         for(String studio_id : studio_ids){
             registerInStudio(studio_id,session);
@@ -42,13 +40,9 @@ public class ElementsAutomation {
             studio_page = session.newRequest().url(STUDIO_URL).get();
             Elements links = studio_page.select("a[href*=action=register]");
 
-            if (links.size() > 0){
-                //System.out.println(String.format("Das Studio %s hat einen Button", studio_id));
+            if (!links.isEmpty()){
                 String register_URL = links.attr("href");
                 clickButton(register_URL,session);
-            }
-            else {
-                System.out.println(String.format("Das Studio %s hat keinen Registrier-Button", studio_id));
             }
 
             } catch (IOException e) {
@@ -58,21 +52,19 @@ public class ElementsAutomation {
     private static void clickButton (String button_URL, Connection session){
         String register_URL = String.format(REGISTER_URL_TEMPLATE,button_URL);
         try {
-            Document click = session.newRequest().url(register_URL).get();
+            session.newRequest().url(register_URL).get();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    private static Document getLogin(Connection session){
+    private static void getLogin(Connection session){
         final String LOGIN_URL = String.format(LOGIN_URL_TEMPLATE, ELEMENTS_MAIL,ELEMENTS_PASSWORD);
-        Document doc;
         try {
-            doc = session.newRequest().url(LOGIN_URL).get();
+            session.newRequest().url(LOGIN_URL).get();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return doc;
     }
     private static List<String> getStudioIDs(String studio_ids){
         List<String> studio_ids_list = new ArrayList<>();
