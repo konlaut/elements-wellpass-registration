@@ -6,12 +6,12 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven
+name: Daily registration
 
 on:
   schedule:
-    - cron:  '00 11 * * *'
-    # This runs at 10:00 AM UTC each day.
+    - cron:  '00 07 * * *'
+    # This runs at 07:00 AM UTC each day. Berlin = UTC+1 (Winter) or UTC+2 (Summer)
     # * is a special character in YAML so you have to quote this string
   workflow_dispatch:
     inputs:
