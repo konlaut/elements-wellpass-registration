@@ -29,4 +29,7 @@ HOW-TO:
 7. Click on the "Actions" tab located in the repository's navigation menu.
 8. Click on "I understand my workflows, go ahead and enable them" ;)
 9. You can change the shedule of the registration in [your maven.yml](/.github/workflows/maven.yml) by changing the value of "- cron:" 
-10. Have fun
+10. If this workflow doesn't work, you will receive an email with an error report.
+11. You can look up all successfull workflow runs by clicking on "Actions" in the repository navigation bar.
+12. Have fun
+
