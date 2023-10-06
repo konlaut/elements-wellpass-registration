@@ -21,7 +21,6 @@ public class ElementsAutomation {
 
     public static void main(String[] args) {
         List<String> studio_ids = getStudioIDs(STUDIO_IDS);
-        //System.out.println(studio_ids);
 
         Connection session;
         session = Jsoup.newSession().userAgent(HttpConnection.DEFAULT_UA);
