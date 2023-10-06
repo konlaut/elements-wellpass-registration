@@ -4,7 +4,7 @@ Inspired by https://github.com/alican/elements-wellpass-registration but written
 
 HOW-TO:
 1. Fork this repository (Use the fork button)
-2. Navigate to the forked repository (probably https://github.com/ YOUR USERNAME /elements-wellpass-registration)
+2. Navigate to your forked repository
 3. Click on the "Settings" tab located in the repository's navigation menu.
 4. Click on "Secrets and variables" in the left side menu and then click on "Actions"
 5. Add following 3 secrets by clicking on "New repository secret"
