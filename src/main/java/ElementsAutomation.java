@@ -25,7 +25,7 @@ public class ElementsAutomation {
 
         Connection session;
         session = Jsoup.newSession().userAgent(HttpConnection.DEFAULT_UA);
-        session.timeout(45*1000);
+        session.timeout(80*1000);
         getLogin(session);
 
         for(String studio_id : studio_ids){
