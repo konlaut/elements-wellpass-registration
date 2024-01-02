@@ -2,6 +2,7 @@ import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.helper.HttpConnection;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
@@ -25,6 +26,7 @@ public class ElementsAutomation {
 
         Connection session;
         session = Jsoup.newSession().userAgent(HttpConnection.DEFAULT_UA);
+        session.timeout(45*1000);
         getLogin(session);
 
         for(String studio_id : studio_ids){
@@ -41,8 +43,12 @@ public class ElementsAutomation {
             Elements links = studio_page.select("a[href*=action=register]");
 
             if (!links.isEmpty()){
-                String register_URL = links.attr("href");
-                clickButton(register_URL,session);
+
+                for(Element link : links){
+                    String register_URL = link.attr("href");
+                    clickButton(register_URL,session);
+                }
+
             }
 
             } catch (IOException e) {
