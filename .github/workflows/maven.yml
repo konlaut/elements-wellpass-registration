@@ -6,15 +6,15 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Your sheduled registration
+name: Your scheduled registration
 
 on:
   schedule:
-    - cron:  '00 07 * * *'
+    - cron:  '00 17 * * *'
     # This runs at 07:00 AM UTC each day. Berlin = UTC+1 (Winter) or UTC+2 (Summer).
-    # You can change the shedule by adding a new value. Try https://crontab.guru for the right syntax
+    # You can change the schedule by adding a new value. Try https://crontab.guru for the right syntax
     # e.g. '0 10 * * 5-6' if you want to register only for saturdays and sundays 
-    # * is a special character in YAML so you have to quote this string
+    # * is a special character in YAML, so you have to quote this string
   workflow_dispatch:
     inputs:
       logLevel:
