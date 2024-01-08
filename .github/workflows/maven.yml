@@ -10,7 +10,7 @@ name: Your scheduled registration
 
 on:
   schedule:
-    - cron:  '07 */3 * * *'
+    - cron:  '06*/2 * * *'
     # This runs at minute 28 past every 12th hour.
     # You can change the schedule by adding a new value. Try https://crontab.guru for the right syntax
     # e.g. '0 10 * * 5-6' if you want to register only for saturdays and sundays 
